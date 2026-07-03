@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rutiservice — Software de última milla y reparto en Chile</title>
+<meta name="description" content="Software logístico de última milla para empresas de despacho en la Región Metropolitana. Gestiona conductores, rutas, paquetes y cobros con seguimiento en tiempo real, etiquetas QR e integración con Shopify, Mercado Flex y Falabella.">
+<meta name="keywords" content="software de última milla, software logístico Chile, software para empresas de despacho, gestión de repartos, software de reparto, seguimiento de envíos, ruteo de conductores, Región Metropolitana, Santiago">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Rutiservice">
+<link rel="canonical" href="https://rutiservice.com/">
+<meta name="theme-color" content="#0a1733">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rutiservice">
+<meta property="og:locale" content="es_CL">
+<meta property="og:url" content="https://rutiservice.com/">
+<meta property="og:title" content="Rutiservice — Software de última milla y reparto en Chile">
+<meta property="og:description" content="Gestiona conductores, rutas, paquetes y cobros con seguimiento en tiempo real. Software logístico para empresas de despacho en la Región Metropolitana.">
+<meta property="og:image" content="https://rutiservice.com/assets/images/logo.png">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Rutiservice — Software de última milla y reparto en Chile">
+<meta name="twitter:description" content="Software logístico para empresas de despacho en la Región Metropolitana: conductores, rutas, paquetes y cobros en tiempo real.">
+<meta name="twitter:image" content="https://rutiservice.com/assets/images/logo.png">
+
+<!-- Datos estructurados (Schema.org) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Rutiservice",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "url": "https://rutiservice.com/",
+  "description": "Software logístico de última milla para empresas de despacho en la Región Metropolitana, Chile. Gestión de conductores, rutas, paquetes, seguimiento en tiempo real, facturación y cobros.",
+  "inLanguage": "es-CL",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CLP", "description": "Agenda una demo gratis" },
+  "areaServed": { "@type": "AdministrativeArea", "name": "Región Metropolitana, Chile" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Rutiservice",
+    "url": "https://rutiservice.com/",
+    "email": "roraima25app@gmail.com"
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:wght@600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* Marca */
+  --navy: #0a1733;          /* primario — fondos oscuros, titulares */
+  --navy-2: #0e1d40;        /* superficie sobre navy */
+  --blue: #183391;          /* azul corporativo — acciones */
+  --blue-hover: #122659;
+  --blue-soft: #edf1fb;
+  --sky: #5d8bf4;           /* acento sobre oscuro */
+
+  /* Neutros */
+  --paper: #ffffff;
+  --paper-2: #f4f6fa;
+  --ink: #16223f;
+  --muted: #5b6a85;
+  --line: #e2e6ee;
+  --line-d: rgba(255,255,255,0.09);
+  --text-d: rgba(255,255,255,0.6);
+
+  /* Estados operacionales */
+  --ok: #157f4d;   --ok-bg: #e3f3ea;
+  --go: #2c56d4;   --go-bg: #e9eefb;
+  --wait: #68748d; --wait-bg: #eef0f5;
+
+  --font-display: 'Barlow Semi Condensed', sans-serif;
+  --font-body: 'Barlow', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  --r: 3px;
+  --r-lg: 6px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+/* ICONOGRAFÍA */
+.icn { display: inline-flex; }
+.icn svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+
+/* BOTONES */
+.btn-solid {
+  background: var(--blue); color: #fff;
+  padding: 14px 30px; border-radius: var(--r);
+  font-family: var(--font-body); font-weight: 600; font-size: 15px;
+  text-decoration: none; display: inline-flex; align-items: center; gap: 10px;
+  border: none; cursor: pointer; letter-spacing: 0.2px;
+  transition: background 0.2s, transform 0.2s;
+}
+.btn-solid:hover { background: var(--blue-hover); transform: translateY(-1px); }
+.btn-solid:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+.btn-inverse {
+  background: #fff; color: var(--navy);
+  padding: 14px 30px; border-radius: var(--r);
+  font-weight: 600; font-size: 15px; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 10px;
+  border: none; cursor: pointer; letter-spacing: 0.2px;
+  transition: background 0.2s, transform 0.2s;
+}
+.btn-inverse:hover { background: #dfe6f5; transform: translateY(-1px); }
+.btn-ghost-d {
+  background: transparent; color: rgba(255,255,255,0.8);
+  padding: 13px 26px; border-radius: var(--r); font-size: 15px; font-weight: 500;
+  text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid rgba(255,255,255,0.25); transition: border-color 0.2s, color 0.2s;
+}
+.btn-ghost-d:hover { border-color: var(--sky); color: var(--sky); }
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+  padding: 0 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 66px;
+}
+.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.brand-logo { height: 38px; width: auto; display: block; }
+.nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+.nav-links a {
+  font-size: 14px; font-weight: 500;
+  color: var(--muted);
+  text-decoration: none; letter-spacing: 0.2px;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--navy); }
+.nav-links .nav-contact a {
+  background: var(--blue); color: #fff;
+  padding: 10px 22px; border-radius: var(--r); font-weight: 600;
+  transition: background 0.2s;
+}
+.nav-links .nav-contact a:hover { background: var(--blue-hover); color: #fff; }
+
+/* EYEBROW — código de parada del manifiesto */
+.section-tag {
+  font-family: var(--font-mono);
+  font-size: 11px; font-weight: 500; color: var(--blue);
+  text-transform: uppercase; letter-spacing: 2px; margin-bottom: 18px;
+  display: flex; align-items: center; gap: 10px;
+}
+.section-tag::before { content: ''; width: 7px; height: 7px; background: currentColor; flex-shrink: 0; }
+
+/* HERO */
+.hero {
+  background: var(--navy);
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding: 130px 6% 90px;
+  position: relative; overflow: hidden;
+}
+.hero-grid-bg {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(93,139,244,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(93,139,244,0.05) 1px, transparent 1px);
+  background-size: 72px 72px; pointer-events: none;
+}
+.hero-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1.05fr 0.95fr;
+  gap: 80px; align-items: center;
+  position: relative; z-index: 1;
+}
+.hero .section-tag { color: var(--sky); margin-bottom: 28px; }
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(44px, 5.6vw, 76px);
+  font-weight: 700; line-height: 1.02;
+  color: #fff; margin-bottom: 26px; letter-spacing: -0.5px;
+  text-wrap: balance;
+}
+.hero h1 em { font-style: normal; color: var(--sky); }
+.hero-desc {
+  font-size: 17px; color: var(--text-d);
+  line-height: 1.75; margin-bottom: 44px; font-weight: 400; max-width: 500px;
+}
+.hero-actions { display: flex; gap: 14px; align-items: center; margin-bottom: 64px; flex-wrap: wrap; }
+.hero-trust { display: flex; align-items: center; gap: 28px; }
+.trust-divider { width: 1px; height: 30px; background: rgba(255,255,255,0.14); }
+.trust-item { font-size: 12.5px; color: rgba(255,255,255,0.42); letter-spacing: 0.2px; }
+.trust-item strong { color: #fff; display: block; font-size: 22px; font-weight: 500; font-family: var(--font-mono); letter-spacing: -0.5px; margin-bottom: 2px; }
+
+/* HERO — PANEL OPERACIONAL */
+.hero-right { position: relative; }
+.card-main {
+  background: var(--paper);
+  border-radius: var(--r-lg);
+  padding: 26px;
+  box-shadow: 0 30px 80px rgba(2,8,26,0.55);
+}
+.card-main-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 22px; padding-bottom: 16px; border-bottom: 1px solid var(--line);
+}
+.card-main-title { font-family: var(--font-mono); font-size: 11px; font-weight: 500; color: var(--muted); text-transform: uppercase; letter-spacing: 1.5px; }
+.status-dot { display: flex; align-items: center; gap: 7px; font-size: 12px; font-weight: 500; color: var(--ok); }
+.status-dot::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--ok); animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.35} }
+.metrics-row { display: grid; grid-template-columns: repeat(3, 1fr); margin-bottom: 22px; }
+.metric { text-align: center; padding: 4px 0; }
+.metric + .metric { border-left: 1px solid var(--line); }
+.metric-val { font-family: var(--font-mono); font-size: 30px; font-weight: 500; color: var(--navy); letter-spacing: -1px; line-height: 1.1; margin-bottom: 4px; }
+.metric-val.accent { color: var(--blue); }
+.metric-label { font-size: 10.5px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+.pkg-list { display: flex; flex-direction: column; }
+.pkg-item { border-top: 1px solid var(--line); padding: 12px 2px; display: flex; align-items: center; gap: 14px; }
+.pkg-code-mono { font-family: var(--font-mono); font-size: 12px; color: var(--blue); font-weight: 500; min-width: 84px; }
+.pkg-dest { font-size: 13.5px; color: var(--muted); flex: 1; }
+.pkg-status-pill { font-family: var(--font-mono); font-size: 10px; font-weight: 500; padding: 4px 9px; border-radius: 2px; letter-spacing: 0.5px; }
+.pill-ok { background: var(--ok-bg); color: var(--ok); }
+.pill-go { background: var(--go-bg); color: var(--go); }
+.pill-wait { background: var(--wait-bg); color: var(--wait); }
+
+.float-card { position: absolute; background: var(--paper); border-radius: var(--r-lg); box-shadow: 0 18px 50px rgba(2,8,26,0.5); padding: 16px 20px; }
+.fc-invoice { bottom: -82px; left: 26px; min-width: 208px; animation: bobA 6s ease-in-out infinite; }
+.fc-route { top: -58px; right: -18px; min-width: 190px; animation: bobB 7s ease-in-out infinite; }
+@keyframes bobA { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+@keyframes bobB { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
+.fc-label { font-family: var(--font-mono); font-size: 10px; font-weight: 500; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 7px; }
+.fc-val { font-family: var(--font-mono); font-size: 21px; font-weight: 500; color: var(--navy); letter-spacing: -0.5px; }
+.fc-val-sm { font-family: var(--font-mono); font-size: 16px; font-weight: 500; color: var(--navy); }
+.fc-sub { font-size: 11.5px; color: var(--muted); margin-top: 2px; }
+.fc-sub.go { color: var(--go); }
+.fc-route-inner { display: flex; gap: 12px; align-items: center; }
+.route-avatars { display: flex; }
+.route-av { width: 26px; height: 26px; border-radius: 50%; border: 2px solid #fff; font-size: 9px; font-weight: 600; display: flex; align-items: center; justify-content: center; color: #fff; margin-left: -7px; font-family: var(--font-body); }
+.route-av:first-child { margin-left: 0; }
+
+/* INTEGRACIONES STRIP */
+.integ-strip { background: var(--paper-2); border-bottom: 1px solid var(--line); padding: 36px 6%; }
+.integ-strip-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 24px 56px; flex-wrap: wrap; }
+.integ-strip-text { font-size: 15px; color: var(--muted); font-weight: 400; text-align: center; }
+.integ-strip-text strong { color: var(--navy); font-weight: 600; }
+.integ-strip-cta { max-width: 1200px; margin: 18px auto 0; text-align: center; font-size: 14px; color: var(--muted); }
+.integ-strip-cta a { color: var(--blue); font-weight: 600; text-decoration: none; }
+.integ-strip-cta a:hover { text-decoration: underline; }
+.integ-logos-real { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; justify-content: center; }
+.integ-chip { display: flex; align-items: center; justify-content: center; background: var(--paper); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 12px 20px; height: 72px; }
+.integ-logo { height: 44px; width: auto; object-fit: contain; display: block; }
+@media (max-width: 600px) { .integ-logos-real { gap: 12px; } .integ-chip { height: 60px; padding: 10px 14px; } .integ-logo { height: 36px; } }
+
+/* SECTIONS */
+.section { padding: 110px 6%; }
+section[id], footer { scroll-margin-top: 70px; }
+.section-inner { max-width: 1200px; margin: 0 auto; }
+.section-h {
+  font-family: var(--font-display);
+  font-size: clamp(34px, 4.2vw, 52px);
+  font-weight: 700; line-height: 1.04; letter-spacing: -0.3px;
+  margin-bottom: 18px; color: var(--navy);
+  text-wrap: balance;
+}
+.section-sub { font-size: 17px; color: var(--muted); max-width: 560px; font-weight: 400; line-height: 1.75; }
+.subhead {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 2.6vw, 32px);
+  font-weight: 600; line-height: 1.15; letter-spacing: -0.2px;
+  color: var(--navy); margin-bottom: 16px;
+}
+.lead-p { font-size: 17px; color: var(--muted); font-weight: 400; line-height: 1.75; margin-bottom: 34px; }
+
+/* FEATURES — INTERACTIVE SELECTOR */
+#features { background: var(--navy); }
+#features .section-tag { color: var(--sky); }
+#features .section-tag::before { background: var(--sky); }
+#features .section-h { color: #fff; }
+#features .section-sub { color: rgba(255,255,255,0.65); }
+
+.route-line { display: flex; align-items: flex-start; }
+.route-point { display: flex; flex-direction: column; align-items: center; gap: 9px; flex-shrink: 0; }
+.route-stop { width: 9px; height: 9px; border-radius: 50%; background: var(--sky); flex-shrink: 0; }
+.route-stop.open { background: var(--ok); border: none; }
+.route-seg { flex: 1; height: 0; border-top: 1px dashed rgba(93,139,244,0.45); margin-top: 4px; }
+.route-label { font-family: var(--font-mono); font-size: 10px; font-weight: 500; color: var(--sky); text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
+
+.feature-selector-card { margin-top: 56px; background: var(--paper); border: 2px solid var(--blue); border-radius: 20px; padding: 20px; box-shadow: 0 20px 60px rgba(10,23,51,0.10); }
+.feature-selector { display: flex; align-items: stretch; width: 100%; height: 460px; gap: 10px; }
+.feature-option {
+  position: relative; flex: 1 1 0%; min-width: 68px; overflow: hidden;
+  border-radius: var(--r-lg); border: none; padding: 0; margin: 0; cursor: pointer;
+  background: linear-gradient(165deg, var(--navy) 0%, #0c1836 100%);
+  text-align: left; font: inherit; color: inherit; appearance: none;
+  transition: flex-grow 0.6s cubic-bezier(.22,.61,.36,1), box-shadow 0.5s ease;
+}
+.feature-option:not(.active) { flex-grow: 1; }
+.feature-option.active { flex-grow: 6; box-shadow: 0 24px 60px rgba(10,23,51,0.35); }
+.feature-option:focus-visible { outline: 2px solid var(--sky); outline-offset: -2px; }
+.fo-bg { position: absolute; inset: 0; background-size: auto 96%; background-repeat: no-repeat; background-position: top center; transform: scale(1); transition: transform 8s ease-out; }
+.feature-option.active .fo-bg { transform: scale(1.02); transition-duration: 12s; }
+.fo-scrim { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(6,12,28,0.94) 0%, rgba(6,12,28,0.72) 38%, rgba(6,12,28,0.32) 68%, rgba(6,12,28,0.38) 100%); }
+.fo-label { position: absolute; left: 0; right: 0; bottom: 0; display: flex; align-items: flex-end; gap: 16px; padding: 24px; z-index: 1; }
+.fo-icon {
+  width: 44px; height: 44px; border-radius: var(--r); flex-shrink: 0;
+  background: rgba(93,139,244,0.14); border: 1px solid rgba(93,139,244,0.35);
+  display: flex; align-items: center; justify-content: center; color: var(--sky);
+}
+.fo-icon svg { width: 21px; height: 21px; stroke: currentColor; fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.fo-copy { min-width: 300px; opacity: 0; transform: translateX(18px); transition: opacity 0.45s ease, transform 0.45s ease; }
+.feature-option.active .fo-copy { opacity: 1; transform: translateX(0); transition-delay: 0.15s; }
+.fo-tag {
+  display: inline-block; background: rgba(93,139,244,0.15); color: var(--sky);
+  font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+  padding: 4px 10px; border-radius: 2px; margin-bottom: 12px;
+  text-transform: uppercase; letter-spacing: 1px;
+}
+.fo-copy h3 { font-family: var(--font-display); font-size: 22px; font-weight: 600; color: #fff; margin-bottom: 8px; line-height: 1.15; }
+.fo-copy p { font-size: 14px; color: var(--text-d); line-height: 1.6; max-width: 380px; }
+.fo-copy .route-line { margin-top: 18px; max-width: 320px; }
+@media (max-width: 860px) {
+  .feature-selector-card { display: none; }
+}
+
+/* DRIVER VIEW */
+.driver-section { background: var(--paper-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.driver-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; margin-top: 64px; }
+.phone-float { width: min(340px, 90vw); margin: 0 auto; animation: float 6s ease-in-out infinite; }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+.phone { position: relative; width: 100%; background: #111827; border-radius: 52px; padding: 12px; border: 2px solid rgba(255,255,255,.08); box-shadow: 0 40px 90px rgba(10,23,51,.3), inset 0 0 0 2px rgba(255,255,255,.04); transition: transform .5s ease; }
+.phone:hover { transform: rotate(2deg) scale(1.05); }
+.screen { width: 100%; aspect-ratio: 458 / 848; overflow: hidden; border-radius: 40px; background: #000; }
+.screen video { width: 100%; height: 100%; object-fit: cover; display: block; transform: scale(0.95); border-radius: 18px; }
+.dynamic-island { position: absolute; top: 18px; left: 50%; transform: translateX(-50%); width: 34%; height: 34px; background: black; border-radius: 999px; z-index: 20; }
+.volume-up { position: absolute; left: -3px; top: 120px; width: 4px; height: 60px; border-radius: 20px; background: #555; }
+.volume-down { position: absolute; left: -3px; top: 190px; width: 4px; height: 60px; border-radius: 20px; background: #555; }
+.power { position: absolute; right: -3px; top: 150px; width: 4px; height: 90px; border-radius: 20px; background: #555; }
+@media (max-width: 960px) { .driver-grid { grid-template-columns: 1fr; gap: 48px; } }
+
+/* PUNTOS (driver + tracking) */
+.tracking-points { display: flex; flex-direction: column; gap: 22px; }
+.tp { display: flex; gap: 16px; align-items: flex-start; }
+.tp-icn {
+  width: 40px; height: 40px; border: 1px solid var(--line); border-radius: var(--r);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  background: var(--paper); color: var(--blue);
+}
+.tp-icn svg { width: 19px; height: 19px; stroke: currentColor; fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.tp-title { font-size: 15.5px; font-weight: 600; margin-bottom: 2px; color: var(--navy); }
+.tp-desc { font-size: 13.5px; color: var(--muted); line-height: 1.55; }
+
+/* TRACKING */
+.tracking-section { background: var(--navy); }
+.tracking-section .section-tag { color: var(--sky); }
+.tracking-section .section-tag::before { background: var(--sky); }
+.tracking-section .section-h { color: #fff; }
+.tracking-section .section-sub, .tracking-section .lead-p { color: var(--text-d); }
+.tracking-section .tp-icn { background: rgba(93,139,244,0.12); border-color: rgba(93,139,244,0.3); color: var(--sky); }
+.tracking-section .tp-title { color: #fff; }
+.tracking-section .tp-desc { color: var(--text-d); }
+.tracking-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-top: 64px; }
+.track-card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--r-lg); overflow: hidden; box-shadow: 0 16px 50px rgba(10,23,51,0.08); }
+.track-top { background: var(--navy); padding: 22px 28px; display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.track-top-label { font-family: var(--font-mono); font-size: 10px; color: rgba(255,255,255,0.45); font-weight: 500; text-transform: uppercase; letter-spacing: 1.5px; }
+.track-code { font-family: var(--font-mono); font-size: 19px; font-weight: 500; color: #fff; letter-spacing: 2px; }
+.track-body { padding: 28px; }
+.timeline-list { display: flex; flex-direction: column; }
+.tl-item { display: flex; gap: 16px; padding-bottom: 22px; position: relative; }
+.tl-item:last-child { padding-bottom: 0; }
+.tl-dot-col { display: flex; flex-direction: column; align-items: center; width: 18px; flex-shrink: 0; }
+.tl-dot { width: 11px; height: 11px; border-radius: 50%; border: 2px solid var(--line); background: var(--paper); flex-shrink: 0; margin-top: 4px; }
+.tl-item.done .tl-dot { background: var(--ok); border-color: var(--ok); }
+.tl-item.now .tl-dot { background: var(--blue); border-color: var(--blue); box-shadow: 0 0 0 4px rgba(24,51,145,0.15); }
+.tl-line { flex: 1; width: 1px; background: var(--line); margin-top: 5px; }
+.tl-item.done .tl-line { background: var(--ok); opacity: 0.35; }
+.tl-item:last-child .tl-line { display: none; }
+.tl-time { font-size: 11px; color: var(--muted); font-family: var(--font-mono); margin-bottom: 2px; }
+.tl-title { font-size: 14.5px; font-weight: 600; color: var(--ink); }
+.tl-sub { font-size: 12.5px; color: var(--muted); }
+.tl-item.pending .tl-title { color: var(--muted); font-weight: 400; }
+
+/* EMPRESAS / CLIENTES */
+.clients-section { background: var(--paper-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.clients-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 64px; }
+.client-card {
+  background: var(--paper); border: 1px solid var(--line); border-radius: var(--r-lg);
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  padding: 28px 24px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.client-card:hover { transform: translateY(-3px); border-color: #c6d0e2; box-shadow: 0 14px 40px rgba(10,23,51,0.08); }
+.client-logo-wrap { height: 72px; display: flex; align-items: center; justify-content: center; }
+.client-logo { max-height: 60px; max-width: 100%; width: auto; object-fit: contain; display: block; }
+.client-quote { font-size: 14px; color: var(--muted); line-height: 1.65; font-weight: 400; margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--line); }
+@media (max-width: 900px) { .clients-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .clients-grid { grid-template-columns: 1fr; } .client-card { padding: 24px 20px; } }
+
+/* PRICING */
+.pricing-section { background: var(--navy); }
+.pricing-section .section-tag { color: var(--sky); }
+.pricing-section .section-tag::before { background: var(--sky); }
+.pricing-section .section-h { color: #fff; }
+.pricing-section .section-sub { color: var(--text-d); }
+.plans-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 64px; align-items: start; }
+.plan {
+  background: var(--paper); border: 1px solid var(--line); border-radius: var(--r-lg);
+  padding: 36px 30px; position: relative;
+  transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
+}
+.plan:hover { transform: translateY(-3px); border-color: #c6d0e2; box-shadow: 0 14px 40px rgba(10,23,51,0.08); }
+.plan.featured { background: var(--paper); border-color: var(--blue); box-shadow: 0 20px 60px rgba(10,23,51,0.14); }
+.plan.featured:hover { border-color: var(--blue-hover); }
+.plan-badge-top {
+  position: absolute; top: -12px; left: 30px;
+  background: var(--ok); color: #fff;
+  font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+  padding: 5px 12px; border-radius: 2px; text-transform: uppercase; letter-spacing: 1px;
+}
+.plan-tier { font-family: var(--font-mono); font-size: 10.5px; font-weight: 500; color: var(--muted); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 18px; }
+.plan-headline { font-family: var(--font-display); font-size: 28px; font-weight: 700; letter-spacing: -0.3px; color: var(--navy); line-height: 1.1; margin-bottom: 8px; }
+.plan-soon .plan-headline { font-size: 24px; }
+.plan-note { font-size: 14px; color: var(--muted); margin-bottom: 24px; line-height: 1.6; }
+.plan-divider { height: 1px; background: var(--line); margin-bottom: 24px; }
+.plan-feats { list-style: none; display: flex; flex-direction: column; gap: 13px; margin-bottom: 30px; }
+.plan-feats li { font-size: 14px; display: flex; gap: 10px; align-items: flex-start; color: var(--muted); line-height: 1.5; }
+.plan-feats li::before { content: '—'; color: var(--blue); flex-shrink: 0; font-family: var(--font-mono); font-size: 12px; margin-top: 2px; }
+.plan-btn {
+  display: block; text-align: center; padding: 13px; border-radius: var(--r);
+  font-size: 14px; font-weight: 600; text-decoration: none; transition: background 0.2s, color 0.2s;
+  border: 1px solid var(--blue); color: var(--blue); background: transparent;
+}
+.plan-btn:hover { background: var(--blue); color: #fff; }
+.plan.featured .plan-btn { background: var(--blue); color: #fff; border-color: var(--blue); }
+.plan.featured .plan-btn:hover { background: var(--blue-hover); border-color: var(--blue-hover); }
+.plan-collapsible summary { list-style: none; cursor: pointer; display: block; }
+.plan-collapsible summary::-webkit-details-marker { display: none; }
+.plan-collapsible .plan-headline { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0; }
+.plan-chevron { font-style: normal; font-size: 20px; color: var(--muted); transition: transform 0.25s; flex-shrink: 0; line-height: 1; }
+.plan-collapsible details[open] .plan-chevron { transform: rotate(90deg); }
+.plan-collapse-body { padding-top: 20px; animation: plan-open 0.2s ease; }
+@keyframes plan-open { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
+
+/* CTA */
+.cta-section { background: var(--navy); padding: 110px 6%; text-align: center; position: relative; overflow: hidden; }
+.cta-section::before {
+  content: ''; position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(93,139,244,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(93,139,244,0.04) 1px, transparent 1px);
+  background-size: 72px 72px; pointer-events: none;
+}
+.cta-inner { max-width: 680px; margin: 0 auto; position: relative; z-index: 1; }
+.cta-section .section-tag { justify-content: center; color: var(--sky); }
+.cta-h {
+  font-family: var(--font-display);
+  font-size: clamp(34px, 4.2vw, 54px);
+  font-weight: 700; color: #fff; line-height: 1.06; letter-spacing: -0.3px; margin-bottom: 20px;
+  text-wrap: balance;
+}
+.cta-sub { font-size: 17px; color: var(--text-d); margin-bottom: 48px; font-weight: 400; line-height: 1.7; }
+
+/* CONTACT FORM */
+.contact-form { max-width: 560px; margin: 0 auto; background: var(--paper); border-radius: var(--r-lg); padding: 34px; text-align: left; box-shadow: 0 30px 80px rgba(2,8,26,0.5); }
+.cf-header { text-align: center; padding-bottom: 22px; margin-bottom: 26px; border-bottom: 1px solid var(--line); }
+.cf-logo { height: 42px; width: auto; display: inline-block; }
+.cf-row { display: flex; gap: 14px; }
+.cf-field { flex: 1; margin-bottom: 16px; display: flex; flex-direction: column; min-width: 0; }
+.cf-field label { font-size: 12px; font-weight: 600; color: var(--navy); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.6px; }
+.cf-field input, .cf-field textarea {
+  font-family: var(--font-body); font-size: 15px; padding: 12px 14px;
+  border: 1px solid var(--line); border-radius: var(--r);
+  background: var(--paper-2); color: var(--ink); outline: none;
+  transition: border-color .2s, box-shadow .2s, background .2s; width: 100%;
+}
+.cf-field input::placeholder, .cf-field textarea::placeholder { color: #9aa6bc; }
+.cf-field input:focus, .cf-field textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(24,51,145,0.12); background: #fff; }
+.cf-field textarea { resize: vertical; min-height: 92px; }
+.cf-recaptcha { display: flex; justify-content: center; margin: 12px 0 4px; }
+.cf-submit { width: 100%; justify-content: center; margin-top: 6px; cursor: pointer; }
+.form-flash { max-width: 560px; margin: 0 auto 18px; padding: 13px 18px; border-radius: var(--r); font-size: 14px; font-weight: 500; text-align: center; display: none; }
+.form-flash.show { display: block; }
+.form-flash.ok { background: var(--ok-bg); color: var(--ok); }
+.form-flash.err { background: #fdeaea; color: #9b1c1c; }
+@media (max-width: 560px) { .cf-row { flex-direction: column; gap: 0; } .contact-form { padding: 24px; } }
+
+/* FOOTER */
+footer { background: var(--navy); border-top: 1px solid var(--line-d); padding: 60px 6% 36px; }
+.footer-top { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; padding-bottom: 40px; border-bottom: 1px solid var(--line-d); }
+.footer-brand p { font-size: 14px; color: rgba(255,255,255,0.4); line-height: 1.7; max-width: 260px; font-weight: 400; }
+.footer-col h5 { font-family: var(--font-mono); font-size: 10.5px; font-weight: 500; color: rgba(255,255,255,0.38); text-transform: uppercase; letter-spacing: 1.8px; margin-bottom: 16px; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-col a { font-size: 14px; color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.15s; font-weight: 400; }
+.footer-col a:hover { color: var(--sky); }
+.footer-bottom { max-width: 1200px; margin: 28px auto 0; display: flex; justify-content: space-between; align-items: center; font-size: 12.5px; color: rgba(255,255,255,0.3); flex-wrap: wrap; gap: 10px; }
+
+@media (max-width: 960px) {
+  .hero { min-height: auto; padding-top: 120px; }
+  .hero-inner, .tracking-grid { grid-template-columns: 1fr; }
+  .hero-right, .fc-invoice, .fc-route { display: none; }
+  .hero-trust { flex-wrap: wrap; gap: 14px 20px; }
+  .trust-divider { display: none; }
+  .plans-grid { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .nav-links { gap: 0; }
+  .nav-links li { display: none; }
+  .nav-links .nav-contact { display: block; }
+  .section { padding: 80px 6%; }
+}
+
+/* WHATSAPP FLOATING BUTTON */
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 200;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.whatsapp-float:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 26px rgba(37, 211, 102, 0.6);
+}
+.whatsapp-float svg { width: 32px; height: 32px; fill: #fff; }
+@media (max-width: 768px) {
+  .whatsapp-float { bottom: 18px; right: 18px; width: 52px; height: 52px; }
+  .whatsapp-float svg { width: 28px; height: 28px; }
+}
+
+/* REDUCED MOTION */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .phone-float, .fc-invoice, .fc-route, .status-dot::before { animation: none; }
+  .phone, .feature-option, .fo-copy, .plan, .client-card, .btn-solid, .btn-inverse { transition: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">
+    <picture>
+      <source srcset="assets/images/logo.webp" type="image/webp">
+      <img src="assets/images/logo.png" alt="Rutiservice" class="brand-logo" width="170" height="40">
+    </picture>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#features">Solución</a></li>
+    <li><a href="#empresas">Empresas</a></li>
+    <li><a href="#pricing">Planes</a></li>
+    <li class="nav-contact"><a href="#contacto">Contacto</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid-bg" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="section-tag">Software logístico · Última milla · Región Metropolitana</div>
+      <h1>Deja atrás WhatsApp, Excel<br>y el <em>desorden</em><br>en tus despachos.</h1>
+      <p class="hero-desc">Deja de perseguir conductores por WhatsApp y de administrar facturas, cobros y nóminas en Excel. Con Rutiservice controlas tus entregas en tiempo real y automatizas la gestión administrativa de tu operación desde una sola plataforma.</p>
+      <div class="hero-actions">
+        <a href="#contacto" class="btn-inverse">
+          Más información
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#contacto" class="btn-ghost-d">Solicitar tu demo gratis</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item"><strong>52</strong>comunas de la RM</div>
+        <div class="trust-divider"></div>
+        <div class="trust-item"><strong>100%</strong>en la nube</div>
+        <div class="trust-divider"></div>
+        <div class="trust-item"><strong>24/7</strong>tiempo real</div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="card-main">
+        <div class="card-main-header">
+          <span class="card-main-title">Panel operacional</span>
+          <span class="status-dot">Sistema activo</span>
+        </div>
+        <div class="metrics-row">
+          <div class="metric">
+            <div class="metric-val">667</div>
+            <div class="metric-label">Total</div>
+          </div>
+          <div class="metric">
+            <div class="metric-val accent">345</div>
+            <div class="metric-label">En camino</div>
+          </div>
+          <div class="metric">
+            <div class="metric-val">322</div>
+            <div class="metric-label">Entregados</div>
+          </div>
+        </div>
+        <div class="pkg-list">
+          <div class="pkg-item">
+            <span class="pkg-code-mono">PKG-7A3B2</span>
+            <span class="pkg-dest">Providencia, RM</span>
+            <span class="pkg-status-pill pill-ok">ENTREGADO</span>
+          </div>
+          <div class="pkg-item">
+            <span class="pkg-code-mono">PKG-9K1X5</span>
+            <span class="pkg-dest">Ñuñoa, RM</span>
+            <span class="pkg-status-pill pill-go">EN CAMINO</span>
+          </div>
+          <div class="pkg-item">
+            <span class="pkg-code-mono">PKG-4M8Q1</span>
+            <span class="pkg-dest">Las Condes, RM</span>
+            <span class="pkg-status-pill pill-wait">PENDIENTE</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="float-card fc-invoice">
+        <div class="fc-label">Paquetes por cobrar</div>
+        <div class="fc-val">$137.500</div>
+        <div class="fc-sub">efectivo o transferencia</div>
+      </div>
+
+      <div class="float-card fc-route">
+        <div class="fc-label">Conductores activos</div>
+        <div class="fc-route-inner">
+          <div class="route-avatars">
+            <div class="route-av" style="background:#183391">JP</div>
+            <div class="route-av" style="background:#2a4aa8">MR</div>
+            <div class="route-av" style="background:#0a1733">AL</div>
+            <div class="route-av" style="background:#40548a">SR</div>
+          </div>
+          <div>
+            <div class="fc-val-sm">57 / 60</div>
+            <div class="fc-sub go">Ruta en tiempo real</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTEGRACIONES STRIP -->
+<div class="integ-strip">
+  <div class="integ-strip-inner">
+    <span class="integ-strip-text">Puedes trabajar con paquetes de <strong>Mercado Libre</strong>, <strong>Falabella</strong> y <strong>Shopify</strong></span>
+    <div class="integ-logos-real">
+      <div class="integ-chip">
+        <picture>
+          <source srcset="assets/images/logo-mercadolibre.webp" type="image/webp">
+          <img src="assets/images/logo-mercadolibre.png" alt="MercadoLibre" class="integ-logo" width="48" height="48" loading="lazy">
+        </picture>
+      </div>
+      <div class="integ-chip">
+        <picture>
+          <source srcset="assets/images/logo-falabella.webp" type="image/webp">
+          <img src="assets/images/logo-falabella.png" alt="Falabella" class="integ-logo" width="64" height="48" loading="lazy">
+        </picture>
+      </div>
+      <div class="integ-chip">
+        <picture>
+          <source srcset="assets/images/logo-shopify.webp" type="image/webp">
+          <img src="assets/images/logo-shopify.png" alt="Shopify" class="integ-logo" width="48" height="48" loading="lazy">
+        </picture>
+      </div>
+    </div>
+  </div>
+  <div class="integ-strip-cta">¿Vendes en otra plataforma? <a href="#contacto">Cuéntanos y la integramos a tu operación →</a></div>
+</div>
+
+<!-- FEATURES -->
+<section class="section" id="features">
+  <div class="section-inner">
+    <div class="section-tag">Plataforma</div>
+    <h2 class="section-h">Una sola herramienta.<br>Control absoluto.</h2>
+    <p class="section-sub">Pensado para operaciones de despacho que necesitan trazabilidad, automatización y resultados medibles.</p>
+
+    <div class="feature-selector-card">
+    <div class="feature-selector" id="featureSelector">
+      <button type="button" class="feature-option active" aria-pressed="true" aria-label="Panel administrador total">
+        <div class="fo-bg" style="background-image: url('assets/images/feature-admin-panel.jpg')"></div>
+        <div class="fo-scrim"></div>
+        <div class="fo-label">
+          <span class="fo-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7.5" height="9.5" rx="1"/><rect x="13.5" y="3" width="7.5" height="5.5" rx="1"/><rect x="13.5" y="11.5" width="7.5" height="9.5" rx="1"/><rect x="3" y="15.5" width="7.5" height="5.5" rx="1"/></svg></span>
+          <div class="fo-copy">
+            <div class="fo-tag">Core</div>
+            <h3>Panel administrador total</h3>
+            <p>Visibilidad en tiempo real de toda la operación: estado de cada paquete, asignación de conductores, rutas y reportes desde un único dashboard.</p>
+            <div class="route-line" aria-hidden="true">
+              <div class="route-point"><span class="route-stop"></span><span class="route-label">Pendiente</span></div>
+              <span class="route-seg"></span>
+              <div class="route-point"><span class="route-stop"></span><span class="route-label">Bodega</span></div>
+              <span class="route-seg"></span>
+              <div class="route-point"><span class="route-stop"></span><span class="route-label">En camino</span></div>
+              <span class="route-seg"></span>
+              <div class="route-point"><span class="route-stop open"></span><span class="route-label">Entregado</span></div>
+            </div>
+          </div>
+        </div>
+      </button>
+      <button type="button" class="feature-option" aria-pressed="false" aria-label="Vista de clientes">
+        <div class="fo-bg" style="background-image: url('assets/images/feature-clients-panel.jpg')"></div>
+        <div class="fo-scrim"></div>
+        <div class="fo-label">
+          <span class="fo-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg></span>
+          <div class="fo-copy">
+            <h3>Vista de clientes</h3>
+            <p>Tus clientes tienen su propia cuenta para cargar sus paquetes e imprimir etiquetas, dejando todo listo y en orden para el retiro por parte de tus conductores.</p>
+          </div>
+        </div>
+      </button>
+      <button type="button" class="feature-option" aria-pressed="false" aria-label="Rastreo público">
+        <div class="fo-bg" style="background-image: url('assets/images/feature-tracking-panel.jpg')"></div>
+        <div class="fo-scrim"></div>
+        <div class="fo-label">
+          <span class="fo-icon"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg></span>
+          <div class="fo-copy">
+            <h3>Rastreo público</h3>
+            <p>Tus clientes ingresan su código de seguimiento y ven al instante el estado real de su paquete, sin crear cuenta ni descargar una aplicación.</p>
+          </div>
+        </div>
+      </button>
+      <button type="button" class="feature-option" aria-pressed="false" aria-label="Facturación y nómina">
+        <div class="fo-bg" style="background-image: url('assets/images/feature-billing-panel.jpg')"></div>
+        <div class="fo-scrim"></div>
+        <div class="fo-label">
+          <span class="fo-icon"><svg viewBox="0 0 24 24"><path d="M7 2.8h10a1 1 0 0 1 1 1v17.4l-3-2-3 2-3-2-3 2V3.8a1 1 0 0 1 1-1z"/><path d="M9.5 8.2h5M9.5 12.2h5"/></svg></span>
+          <div class="fo-copy">
+            <h3>Facturación y nómina</h3>
+            <p>Automatiza tu operación financiera. Genera facturas para tus clientes y procesa la nómina de tus conductores en segundos, todo desde una sola plataforma y con un solo clic.</p>
+          </div>
+        </div>
+      </button>
+      <button type="button" class="feature-option" aria-pressed="false" aria-label="Notificaciones masivas">
+        <div class="fo-bg" style="background-image: url('assets/images/feature-notifications-panel.jpg')"></div>
+        <div class="fo-scrim"></div>
+        <div class="fo-label">
+          <span class="fo-icon"><svg viewBox="0 0 24 24"><path d="M12 3a5 5 0 0 0-5 5v3.3c0 .7-.28 1.37-.78 1.87L5 14.5h14l-1.22-1.33c-.5-.5-.78-1.17-.78-1.87V8a5 5 0 0 0-5-5z"/><path d="M9.5 18.5a2.5 2.5 0 0 0 5 0"/></svg></span>
+          <div class="fo-copy">
+            <h3>Notificaciones masivas</h3>
+            <p>Avisa a todos tus clientes y conductores a la vez sobre feriados, días sin operación o cualquier novedad importante, con un modal que aparece directo en sus cuentas.</p>
+          </div>
+        </div>
+      </button>
+      <button type="button" class="feature-option" aria-pressed="false" aria-label="E-commerce conectado">
+        <div class="fo-bg" style="background-image: url('assets/images/feature-ecommerce-panel.jpg')"></div>
+        <div class="fo-scrim"></div>
+        <div class="fo-label">
+          <span class="fo-icon"><svg viewBox="0 0 24 24"><path d="M10 13.2a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7.1l-1.7 1.7"/><path d="M14 10.8a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7.1l1.7-1.7"/></svg></span>
+          <div class="fo-copy">
+            <div class="fo-tag">Integraciones</div>
+            <h3>E-commerce conectado</h3>
+            <p>¿Necesitas una integración a medida? Conectamos tu tienda y automatizamos tus procesos para que tu operación sea más eficiente. Consulta por nuestras integraciones activas.</p>
+          </div>
+        </div>
+      </button>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- DRIVER VIEW -->
+<section class="section driver-section" id="conductores">
+  <div class="section-inner">
+    <div class="section-tag">Conductores</div>
+    <h2 class="section-h">El conductor,<br>con todo a la vista.</h2>
+    <div class="driver-grid">
+      <div class="phone-float">
+        <div class="phone">
+          <span class="volume-up"></span>
+          <span class="volume-down"></span>
+          <span class="power"></span>
+          <div class="dynamic-island"></div>
+          <div class="screen">
+            <video autoplay muted loop playsinline preload="metadata" aria-label="Flujo de trabajo del conductor en Rutiservice">
+              <source src="assets/video/driver_flow.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+      <div class="tracking-points">
+        <h3 class="subhead">Fácil acceso, mejoran los tiempos de entrega</h3>
+        <p class="lead-p">Una vista web simple y directa. Tus repartidores entran desde el navegador de cualquier dispositivo —sin descargar ni instalar nada— y ven exactamente lo que tienen que hacer hoy.</p>
+        <div class="tp">
+          <span class="tp-icn"><svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17.5" rx="1.5"/><path d="M9 2.3h6v3.2H9z"/><path d="M9 11h6M9 15h4"/></svg></span>
+          <div><div class="tp-title">Resumen del día</div><div class="tp-desc">Pendientes, entregados, reprogramados y cancelados de un vistazo.</div></div>
+        </div>
+        <div class="tp">
+          <span class="tp-icn"><svg viewBox="0 0 24 24"><path d="M3 8V4.5A1.5 1.5 0 0 1 4.5 3H8M16 3h3.5A1.5 1.5 0 0 1 21 4.5V8M21 16v3.5a1.5 1.5 0 0 1-1.5 1.5H16M8 21H4.5A1.5 1.5 0 0 1 3 19.5V16"/><path d="M7 12h10"/></svg></span>
+          <div><div class="tp-title">Búsqueda y escáner QR</div><div class="tp-desc">Encuentra una parada por tracking o escanea el código al instante.</div></div>
+        </div>
+        <div class="tp">
+          <span class="tp-icn"><svg viewBox="0 0 24 24"><path d="M21 10.2c0 6.8-9 11.8-9 11.8s-9-5-9-11.8a9 9 0 0 1 18 0z"/><circle cx="12" cy="10.2" r="2.6"/></svg></span>
+          <div><div class="tp-title">Paradas en tiempo real</div><div class="tp-desc">Dirección, comuna y estado de cada entrega, siempre actualizado.</div></div>
+        </div>
+        <div class="tp">
+          <span class="tp-icn"><svg viewBox="0 0 24 24"><path d="M5.5 21.5V3.5"/><path d="M5.5 4.2c4-2.2 7 2.2 11.5 0v9.2c-4.5 2.2-7.5-2.2-11.5 0"/></svg></span>
+          <div><div class="tp-title">Inicia y finaliza la ruta</div><div class="tp-desc">Control de la jornada con un clic: Inicio, Ruta, Escáner, Paquetes y Perfil.</div></div>
+        </div>
+        <div class="tp">
+          <span class="tp-icn"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 6.5v11"/><path d="M14.8 9.2c-.5-1-1.6-1.6-2.8-1.6-1.6 0-2.9.9-2.9 2.1 0 2.8 5.8 1.6 5.8 4.4 0 1.2-1.3 2.1-2.9 2.1-1.3 0-2.4-.6-2.9-1.6"/></svg></span>
+          <div><div class="tp-title">Control de tus ganancias</div><div class="tp-desc">Registra el efectivo cobrado en cada entrega y revisa cuánto llevas acumulado en la semana.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRACKING -->
+<section class="section tracking-section" id="seguimiento">
+  <div class="section-inner">
+    <div class="section-tag">Seguimiento</div>
+    <h2 class="section-h">Tus clientes siempre<br>informados.</h2>
+    <div class="tracking-grid">
+      <div class="track-card">
+        <div class="track-top">
+          <div class="track-top-label">Seguimiento de envío</div>
+          <div class="track-code">PKG · 9K1X5</div>
+        </div>
+        <div class="track-body">
+          <div class="timeline-list">
+            <div class="tl-item done">
+              <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
+              <div>
+                <div class="tl-time">08:32 — Hoy</div>
+                <div class="tl-title">Recibido en bodega</div>
+                <div class="tl-sub">Escaneado por supervisor</div>
+              </div>
+            </div>
+            <div class="tl-item done">
+              <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
+              <div>
+                <div class="tl-time">10:15 — Hoy</div>
+                <div class="tl-title">Asignado a conductor</div>
+                <div class="tl-sub">Marcos Rojas · Ruta Norte</div>
+              </div>
+            </div>
+            <div class="tl-item now">
+              <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
+              <div>
+                <div class="tl-time">13:47 — Hoy</div>
+                <div class="tl-title">En camino a destino</div>
+                <div class="tl-sub">Ñuñoa, Región Metropolitana</div>
+              </div>
+            </div>
+            <div class="tl-item pending">
+              <div class="tl-dot-col"><div class="tl-dot"></div></div>
+              <div>
+                <div class="tl-time">Pendiente</div>
+                <div class="tl-title">Entregado al destinatario</div>
+                <div class="tl-sub">Con foto de respaldo</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tracking-points">
+        <p class="lead-p">Cada paquete tiene un enlace de seguimiento único. Tus clientes acceden desde cualquier dispositivo, sin necesidad de descargar una aplicación.</p>
+        <div class="tp">
+          <span class="tp-icn"><svg viewBox="0 0 24 24"><path d="M3.5 12a8.5 8.5 0 1 0 2.8-6.3"/><path d="M3.5 3.5v5h5"/><path d="M12 8v4.3l2.8 1.9"/></svg></span>
+          <div><div class="tp-title">Historial automático</div><div class="tp-desc">Cada cambio de estado queda registrado con fecha, hora y responsable.</div></div>
+        </div>
+        <div class="tp">
+          <span class="tp-icn"><svg viewBox="0 0 24 24"><path d="M3 8.5a2 2 0 0 1 2-2h2.2L9.5 4h5L16.8 6.5H19a2 2 0 0 1 2 2V18a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8.5z"/><circle cx="12" cy="13" r="3.4"/></svg></span>
+          <div><div class="tp-title">Foto de entrega</div><div class="tp-desc">Respaldo visual de cada despacho como evidencia de la entrega.</div></div>
+        </div>
+        <div class="tp">
+          <span class="tp-icn"><svg viewBox="0 0 24 24"><path d="M4 20.5h16"/><path d="M7 20.5V11M12 20.5V4.5M17 20.5V8"/></svg></span>
+          <div><div class="tp-title">Historial exportable</div><div class="tp-desc">Reporte completo por cliente, período o conductor en un clic.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMPRESAS / CLIENTES (logo + testimonio corto) -->
+<section class="section clients-section" id="empresas">
+  <div class="section-inner">
+    <div class="section-tag">Clientes</div>
+    <h2 class="section-h">Empresas que confían<br>en Rutiservice.</h2>
+    <p class="section-sub">Operadores logísticos y de e-commerce que despachan a diario con nosotros.</p>
+    <div class="clients-grid">
+      <div class="client-card">
+        <div class="client-logo-wrap">
+          <picture>
+            <source srcset="assets/images/clients/client-encofast.webp" type="image/webp">
+            <img src="assets/images/clients/client-encofast.png" alt="Encofast LP SpA — Deliveries & Logistics" class="client-logo" width="162" height="140" loading="lazy">
+          </picture>
+        </div>
+        <p class="client-quote">Nos adaptamos en una semana y dejamos el WhatsApp. Hoy tenemos el control absoluto y ganamos tiempo para sumar nuevos clientes.</p>
+      </div>
+      <div class="client-card">
+        <div class="client-logo-wrap">
+          <picture>
+            <source srcset="assets/images/clients/client-flashipping.webp" type="image/webp">
+            <img src="assets/images/clients/client-flashipping.png" alt="Flash Shipping SpA" class="client-logo" width="140" height="140" loading="lazy">
+          </picture>
+        </div>
+        <p class="client-quote">Veníamos de un sistema costoso donde nunca éramos prioridad. Movemos grandes volúmenes y Rutiservice fue el software moderno y adaptable que necesitábamos.</p>
+      </div>
+      <div class="client-card">
+        <div class="client-logo-wrap">
+          <picture>
+            <source srcset="assets/images/clients/client-albertz.webp" type="image/webp">
+            <img src="assets/images/clients/client-albertz.png" alt="Albert Z — Logística y Transporte" class="client-logo" width="300" height="99" loading="lazy">
+          </picture>
+        </div>
+        <p class="client-quote">Llegamos por una referencia y no hemos parado de crecer. Ganamos orden y transparencia, y bajamos los tiempos de picking al menos un 30%.</p>
+      </div>
+      <div class="client-card">
+        <div class="client-logo-wrap">
+          <picture>
+            <source srcset="assets/images/clients/client-riel.webp" type="image/webp">
+            <img src="assets/images/clients/client-riel.png" alt="Riel" class="client-logo" width="140" height="140" loading="lazy">
+          </picture>
+        </div>
+        <p class="client-quote">Antes perdía horas en hojas de cálculo para mi nómina y los cobros. El módulo de facturación eliminó esas tareas y hoy mejoro mi operación.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section pricing-section" id="pricing">
+  <div class="section-inner">
+    <div class="section-tag">Planes</div>
+    <h2 class="section-h">A tu medida.<br>Sin letra chica.</h2>
+    <p class="section-sub">Te acompañamos desde el primer día para que la implementación sea rápida y sencilla. Nuestro objetivo es ser tu partner tecnológico, ayudándote a optimizar tu operación y a crecer con una solución que se adapta a las necesidades de tu negocio.</p>
+    <div class="plans-grid">
+      <div class="plan featured">
+        <div class="plan-badge-top">Más solicitado</div>
+        <div class="plan-tier">Plan</div>
+        <div class="plan-headline">Emprendedor Logístico</div>
+        <div class="plan-note">Un plan ajustado a tu medida según tu demanda: pagas por lo que tu operación realmente necesita y escala contigo.</div>
+        <div class="plan-divider"></div>
+        <ul class="plan-feats">
+          <li>Alta disponibilidad de infraestructura (24/7)</li>
+          <li>Control total de la plataforma Rutiservice</li>
+          <li>Módulo de facturación integrado</li>
+          <li>Plataforma self-service</li>
+          <li>Acceso a datos y extracción directa</li>
+          <li>Orden automático de paquetes por cobrar</li>
+          <li>Soporte personalizado y acompañamiento operativo</li>
+        </ul>
+        <a href="#contacto" class="plan-btn">Solicita tu demo gratis</a>
+      </div>
+
+      <div class="plan plan-soon plan-collapsible">
+        <details>
+          <summary>
+            <div class="plan-tier">Plan</div>
+            <div class="plan-headline">Profesional logístico <span class="plan-chevron">›</span></div>
+          </summary>
+          <div class="plan-collapse-body">
+            <div class="plan-note">Plan intermedio para operaciones en crecimiento. Escríbenos para revisar la disponibilidad según tu negocio.</div>
+            <div class="plan-divider"></div>
+            <a href="#contacto" class="plan-btn">Consultar disponibilidad</a>
+          </div>
+        </details>
+      </div>
+
+      <div class="plan plan-soon plan-collapsible">
+        <details>
+          <summary>
+            <div class="plan-tier">Plan</div>
+            <div class="plan-headline">Enterprise <span class="plan-chevron">›</span></div>
+          </summary>
+          <div class="plan-collapse-body">
+            <div class="plan-note">Para operadores logísticos con múltiples empresas y alto volumen. Escríbenos para revisar la disponibilidad.</div>
+            <div class="plan-divider"></div>
+            <a href="#contacto" class="plan-btn">Consultar disponibilidad</a>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-section" id="contacto">
+  <div class="cta-inner">
+    <div class="section-tag">Comienza hoy</div>
+    <h2 class="cta-h">Ten el control absoluto de tu operación de despacho.</h2>
+    <p class="cta-sub">Organiza tu operación, genera confianza en nuevos clientes, mantén a tus drivers felices y olvídate de las fotos por WhatsApp. Con Rutiservice, tendrás más tiempo para enfocarte en hacer crecer tu negocio.</p>
+
+    <div id="formFlash" class="form-flash" role="status" aria-live="polite"></div>
+
+    <form id="contactForm" class="contact-form" novalidate>
+      <div class="cf-header">
+        <picture>
+          <source srcset="assets/images/logo.webp" type="image/webp">
+          <img src="assets/images/logo.png" alt="Rutiservice" class="cf-logo" width="187" height="44">
+        </picture>
+      </div>
+      <div class="cf-row">
+        <div class="cf-field">
+          <label for="cf-name">Nombre</label>
+          <input type="text" id="cf-name" name="name" required placeholder="Tu nombre">
+        </div>
+        <div class="cf-field">
+          <label for="cf-email">Correo</label>
+          <input type="email" id="cf-email" name="email" required placeholder="tucorreo@empresa.cl">
+        </div>
+      </div>
+      <div class="cf-row">
+        <div class="cf-field">
+          <label for="cf-phone">Teléfono (opcional)</label>
+          <input type="tel" id="cf-phone" name="phone" placeholder="+569 1234 5678">
+        </div>
+        <div class="cf-field">
+          <label for="cf-company">Empresa</label>
+          <input type="text" id="cf-company" name="company" placeholder="Nombre de tu negocio">
+        </div>
+      </div>
+      <div class="cf-field">
+        <label for="cf-message">¿Buscas un partner tecnológico?</label>
+        <textarea id="cf-message" name="message" rows="4" placeholder="Cuéntanos sobre tu operación..."></textarea>
+      </div>
+      <button type="submit" class="btn-solid cf-submit" id="cf-submit-btn">Solicitar información</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <p>Software logístico para la gestión profesional de entregas de última milla en la Región Metropolitana.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Plataforma</h5>
+      <ul>
+        <li><a href="#features">Funcionalidades</a></li>
+        <li><a href="#seguimiento">Seguimiento</a></li>
+        <li><a href="#pricing">Planes</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Empresa</h5>
+      <ul>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="mailto:roraima25app@gmail.com">roraima25app@gmail.com</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Legal</h5>
+      <ul>
+        <li><a href="/terms">Términos y condiciones</a></li>
+        <li><a href="/privacy">Política de privacidad</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="footerYear">2026</span> Rutiservice SpA. Todos los derechos reservados.</span>
+    <span>Santiago, Chile 🇨🇱</span>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOATING BUTTON -->
+<a href="#" id="whatsappLink"
+   class="whatsapp-float"
+   target="_blank"
+   rel="noopener"
+   aria-label="Contáctanos por WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<script>
+// Año dinámico del footer
+document.getElementById('footerYear').textContent = new Date().getFullYear();
+
+// Link de WhatsApp (encodeURIComponent evita errores de codificación manual)
+document.getElementById('whatsappLink').href =
+  'https://wa.me/56934138319?text=' + encodeURIComponent('Hola, quiero más información sobre Rutiservice.');
+
+// Reveal-on-scroll para cards
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        const idx = Array.from(e.target.parentNode.children).indexOf(e.target);
+        setTimeout(() => {
+          e.target.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+        }, Math.max(0, idx) * 80);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.plan, .client-card, .tp').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    io.observe(el);
+  });
+}
+
+// Carrusel interactivo de Plataforma
+const featureSelector = document.getElementById('featureSelector');
+if (featureSelector) {
+  const options = Array.from(featureSelector.querySelectorAll('.feature-option'));
+  let activeIndex = Math.max(0, options.findIndex(o => o.classList.contains('active')));
+  let autoplayId = null;
+
+  function activate(index) {
+    options.forEach(o => {
+      o.classList.remove('active');
+      o.setAttribute('aria-pressed', 'false');
+    });
+    options[index].classList.add('active');
+    options[index].setAttribute('aria-pressed', 'true');
+    activeIndex = index;
+  }
+
+  function stopAutoplay() {
+    if (autoplayId) {
+      clearInterval(autoplayId);
+      autoplayId = null;
+    }
+  }
+
+  function startAutoplay() {
+    stopAutoplay();
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    autoplayId = setInterval(() => {
+      activate((activeIndex + 1) % options.length);
+    }, 2500);
+  }
+
+  options.forEach((btn, i) => {
+    btn.addEventListener('click', () => {
+      activate(i);
+      startAutoplay();
+    });
+  });
+
+  featureSelector.addEventListener('mouseenter', stopAutoplay);
+  featureSelector.addEventListener('mouseleave', startAutoplay);
+  featureSelector.addEventListener('focusin', stopAutoplay);
+  featureSelector.addEventListener('focusout', startAutoplay);
+
+  startAutoplay();
+}
+
+// Formulario de contacto — POST cruzado (CORS) al backend de Rutiservice
+// Ajusta esta URL al endpoint real una vez desplegado (ver README.md).
+const CONTACT_API_URL = 'https://rutiservice.com/api/contact_leads';
+
+const contactForm = document.getElementById('contactForm');
+const formFlash = document.getElementById('formFlash');
+const submitBtn = document.getElementById('cf-submit-btn');
+
+function showFlash(kind, message) {
+  formFlash.textContent = message;
+  formFlash.className = 'form-flash show ' + kind;
+}
+
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    formFlash.className = 'form-flash';
+
+    const payload = {
+      contact_lead: {
+        name: document.getElementById('cf-name').value.trim(),
+        email: document.getElementById('cf-email').value.trim(),
+        phone: document.getElementById('cf-phone').value.trim(),
+        company: document.getElementById('cf-company').value.trim(),
+        message: document.getElementById('cf-message').value.trim()
+      }
+    };
+
+    if (!payload.contact_lead.name || !payload.contact_lead.email) {
+      showFlash('err', 'Revisa los datos: necesitamos al menos tu nombre y un correo válido.');
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando...';
+
+    try {
+      const res = await fetch(CONTACT_API_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      const data = await res.json().catch(() => ({}));
+
+      if (res.ok) {
+        showFlash('ok', data.message || '¡Gracias! Recibimos tus datos y te contactaremos a la brevedad.');
+        contactForm.reset();
+      } else {
+        showFlash('err', data.message || 'Revisa los datos: necesitamos al menos tu nombre y un correo válido.');
+      }
+    } catch (err) {
+      showFlash('err', 'No pudimos enviar tu solicitud. Intenta nuevamente o escríbenos por WhatsApp.');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Solicitar información';
+    }
+  });
+}
+</script>
+</body>
+</html>
